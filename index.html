@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="theme-color" content="#fff0f3">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Happy Birthday, Umam URF Butki! 🎂 Scrapbook Surprise</title>
+  
+  <!-- Romantic & Handwritten Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Gaegu:wght@400;700&family=Patrick+Hand&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&family=Sacramento&family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Canvas Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
+</head>
+<body>
+
+  <!-- Background Decorative Paper Texture & Floating Elements -->
+  <div class="scrapbook-bg-overlay"></div>
+  <div class="floating-petals-container" id="petalsContainer"></div>
+  <div class="floating-hearts-ambient" id="ambientHearts"></div>
+
+  <!-- Music Box Floating Widget -->
+  <div class="music-box-widget" id="musicBoxWidget" title="Click to play/pause music box melody">
+    <div class="music-note-icon">🎵</div>
+    <div class="music-info">
+      <span class="music-title">Birthday Music Box</span>
+      <span class="music-sub" id="musicStatusText">Tap to Play Melody 🎶</span>
+    </div>
+    <button class="music-play-btn" id="musicToggleBtn" aria-label="Toggle music">
+      <svg id="playIcon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+      <svg id="pauseIcon" class="hidden" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+      </svg>
+    </button>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- MAIN CONTAINER / SCRAPBOOK BINDER          -->
+  <!-- ========================================== -->
+  <main class="scrapbook-stage">
+
+    <!-- =================================================== -->
+    <!-- SCREEN 1: BIRTHDAY WELCOME SCREEN (Two-Sided)       -->
+    <!-- =================================================== -->
+    <section class="scrapbook-page page-active" id="page-welcome">
+      <!-- Top Decorative Washi Tapes -->
+      <div class="washi-tape washi-tape-top-left washi-pink-dots"></div>
+      <div class="washi-tape washi-tape-top-right washi-blue-stripes"></div>
+
+      <div class="welcome-two-sided-layout">
+        
+        <!-- LEFT SIDE: Aesthetic Greeting, Centerpiece Cake, Doodles, Cute Character -->
+        <div class="welcome-col welcome-left-side">
+          <div class="paper-card craft-sheet left-craft-card">
+            <div class="pin-decoration pin-rose"></div>
+            
+            <!-- Large Aesthetic Happy Birthday Heading -->
+            <div class="birthday-banner-wrap">
+              <span class="banner-sub-tag">★ A VERY SPECIAL DAY ★</span>
+              <h1 class="aesthetic-h1">
+                <span class="h1-letter" style="--delay: 0.05s">H</span>
+                <span class="h1-letter" style="--delay: 0.1s">A</span>
+                <span class="h1-letter" style="--delay: 0.15s">P</span>
+                <span class="h1-letter" style="--delay: 0.2s">P</span>
+                <span class="h1-letter" style="--delay: 0.25s">Y</span>
+                <span class="h1-space">&nbsp;</span>
+                <span class="h1-letter" style="--delay: 0.3s">B</span>
+                <span class="h1-letter" style="--delay: 0.35s">I</span>
+                <span class="h1-letter" style="--delay: 0.4s">R</span>
+                <span class="h1-letter" style="--delay: 0.45s">T</span>
+                <span class="h1-letter" style="--delay: 0.5s">H</span>
+                <span class="h1-letter" style="--delay: 0.55s">D</span>
+                <span class="h1-letter" style="--delay: 0.6s">A</span>
+                <span class="h1-letter" style="--delay: 0.65s">Y</span>
+              </h1>
+              <div class="recipient-name-wrap">
+                <span class="sub-script">to my Bestfriend</span>
+              </div>
+            </div>
+
+            <!-- Cake Centerpiece with glowing candles and floating decorations -->
+            <div class="center-cake-stage">
+              <!-- Floating tiny decorations around cake -->
+              <div class="cake-decorations">
+                <span class="decor-item decor-star decor-1">✨</span>
+                <span class="decor-item decor-heart decor-2">💖</span>
+                <span class="decor-item decor-flower decor-3">🌸</span>
+                <span class="decor-item decor-balloon decor-4">🎈</span>
+                <span class="decor-item decor-star decor-5">⭐</span>
+                <span class="decor-item decor-heart decor-6">💕</span>
+              </div>
+
+              <!-- Center Birthday Cake SVG -->
+              <div class="svg-cake-wrapper">
+                <svg viewBox="0 0 340 300" class="aesthetic-cake-svg" id="leftAestheticCake">
+                  <defs>
+                    <linearGradient id="cakePlateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ffffff"/>
+                      <stop offset="100%" stop-color="#eed8db"/>
+                    </linearGradient>
+                    <linearGradient id="frostingGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#fff5f7"/>
+                      <stop offset="100%" stop-color="#ffccd5"/>
+                    </linearGradient>
+                    <linearGradient id="frostingGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#ffb3c6"/>
+                      <stop offset="100%" stop-color="#fb6f92"/>
+                    </linearGradient>
+                    <linearGradient id="candleGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#ffd166"/>
+                      <stop offset="100%" stop-color="#ff9f1c"/>
+                    </linearGradient>
+                    <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                      <stop offset="0%" stop-color="#ff4800"/>
+                      <stop offset="50%" stop-color="#ffaa00"/>
+                      <stop offset="100%" stop-color="#fff7a1"/>
+                    </linearGradient>
+                    <filter id="flameGlow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                    </filter>
+                  </defs>
+
+                  <!-- Scalloped Cake Stand -->
+                  <path d="M 60 270 Q 170 295 280 270 L 265 285 Q 170 305 75 285 Z" fill="#e8cfd4" opacity="0.6"/>
+                  <ellipse cx="170" cy="270" rx="120" ry="18" fill="url(#cakePlateGrad)" stroke="#e8a5b2" stroke-width="3"/>
+                  <!-- Pedestal Base -->
+                  <path d="M 140 276 L 130 295 Q 170 302 210 295 L 200 276 Z" fill="#fff" stroke="#e8a5b2" stroke-width="2.5"/>
+
+                  <!-- Bottom Cake Tier -->
+                  <rect x="75" y="180" width="190" height="75" rx="14" fill="#fffcf7" stroke="#e8a5b2" stroke-width="3"/>
+                  <!-- Bottom Tier Frosting Swag -->
+                  <path d="M 75 200 Q 94 216 113 200 Q 132 216 151 200 Q 170 216 189 200 Q 208 216 227 200 Q 246 216 265 200 L 265 180 L 75 180 Z" fill="url(#frostingGrad1)"/>
+                  <path d="M 75 240 Q 170 262 265 240" stroke="#fb6f92" stroke-width="4" stroke-dasharray="7 7" fill="none"/>
+
+                  <!-- Middle Cream Ring -->
+                  <path d="M 90 180 Q 170 195 250 180 L 245 168 Q 170 182 95 168 Z" fill="#ffb3c6" stroke="#fb6f92" stroke-width="2"/>
+
+                  <!-- Top Cake Tier -->
+                  <rect x="105" y="115" width="130" height="60" rx="12" fill="#fffbf3" stroke="#e8a5b2" stroke-width="3"/>
+                  <!-- Top Tier Frosting Drips -->
+                  <path d="M 105 130 Q 118 148 131 130 Q 144 148 157 130 Q 170 148 183 130 Q 196 148 209 130 Q 222 148 235 130 L 235 115 L 105 115 Z" fill="url(#frostingGrad2)"/>
+
+                  <!-- Cute Sprinkles & Pearls -->
+                  <circle cx="120" cy="155" r="3" fill="#ff4d6d"/>
+                  <circle cx="145" cy="162" r="3" fill="#a2d2ff"/>
+                  <circle cx="170" cy="152" r="3" fill="#ffd166"/>
+                  <circle cx="195" cy="160" r="3" fill="#b7b7a4"/>
+                  <circle cx="220" cy="153" r="3" fill="#fb6f92"/>
+
+                  <!-- Strawberries on top -->
+                  <g transform="translate(115, 95)">
+                    <path d="M 12 0 C 4 0 0 10 5 18 C 10 24 14 24 19 18 C 24 10 20 0 12 0 Z" fill="#ff3366"/>
+                    <path d="M 12 -2 L 14 -5 M 10 -4 L 14 -2 M 8 -1 L 16 -1" stroke="#2b9348" stroke-width="2.5" stroke-linecap="round"/>
+                    <circle cx="10" cy="9" r="0.9" fill="#fff"/>
+                    <circle cx="14" cy="14" r="0.9" fill="#fff"/>
+                  </g>
+                  <g transform="translate(195, 95)">
+                    <path d="M 12 0 C 4 0 0 10 5 18 C 10 24 14 24 19 18 C 24 10 20 0 12 0 Z" fill="#ff3366"/>
+                    <path d="M 12 -2 L 14 -5 M 10 -4 L 14 -2 M 8 -1 L 16 -1" stroke="#2b9348" stroke-width="2.5" stroke-linecap="round"/>
+                    <circle cx="10" cy="9" r="0.9" fill="#fff"/>
+                    <circle cx="14" cy="14" r="0.9" fill="#fff"/>
+                  </g>
+
+                  <!-- 3 Glowing Candles -->
+                  <!-- Candle 1 -->
+                  <rect x="135" y="70" width="8" height="45" rx="3" fill="#a2d2ff" stroke="#72a5cc" stroke-width="1.5"/>
+                  <line x1="139" y1="70" x2="139" y2="60" stroke="#444" stroke-width="2"/>
+                  <g class="candle-flame-group">
+                    <ellipse cx="139" cy="52" rx="6" ry="11" fill="url(#flameGrad)" filter="url(#flameGlow)" class="flame-flicker flame-1"/>
+                  </g>
+
+                  <!-- Candle 2 (Middle) -->
+                  <rect x="166" y="58" width="8" height="57" rx="3" fill="url(#candleGrad1)" stroke="#d48b1c" stroke-width="1.5"/>
+                  <line x1="170" y1="58" x2="170" y2="48" stroke="#444" stroke-width="2"/>
+                  <g class="candle-flame-group">
+                    <ellipse cx="170" cy="40" rx="7" ry="13" fill="url(#flameGrad)" filter="url(#flameGlow)" class="flame-flicker flame-2"/>
+                  </g>
+
+                  <!-- Candle 3 -->
+                  <rect x="197" y="70" width="8" height="45" rx="3" fill="#ffb3c6" stroke="#e07a93" stroke-width="1.5"/>
+                  <line x1="201" y1="70" x2="201" y2="60" stroke="#444" stroke-width="2"/>
+                  <g class="candle-flame-group">
+                    <ellipse cx="201" cy="52" rx="6" ry="11" fill="url(#flameGrad)" filter="url(#flameGlow)" class="flame-flicker flame-3"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Cute cartoon character at the bottom holding birthday gifts & wearing party cap -->
+            <div class="bottom-mascot-wrap">
+              <div class="mascot-speech-bubble">
+                <span>"Happy birthday to the loveliest girl ever! 🌸✨"</span>
+              </div>
+              <div class="cartoon-character-svg">
+                <!-- Adorable Bunny Mascot Holding Gift -->
+                <svg viewBox="0 0 160 160" width="130" height="130">
+                  <!-- Party Hat -->
+                  <polygon points="80,10 62,55 98,55" fill="#ffb3c6" stroke="#fb6f92" stroke-width="2.5"/>
+                  <circle cx="80" cy="10" r="6" fill="#ffd166"/>
+                  <path d="M 66 43 Q 80 47 94 43" stroke="#fff" stroke-width="3" fill="none"/>
+                  <path d="M 70 30 Q 80 34 90 30" stroke="#ffd166" stroke-width="3" fill="none"/>
+
+                  <!-- Bunny Ears -->
+                  <ellipse cx="55" cy="50" rx="9" ry="24" transform="rotate(-18 55 50)" fill="#fff" stroke="#5e493a" stroke-width="2.5"/>
+                  <ellipse cx="55" cy="50" rx="5" ry="16" transform="rotate(-18 55 50)" fill="#ffccd5"/>
+                  <ellipse cx="105" cy="50" rx="9" ry="24" transform="rotate(18 105 50)" fill="#fff" stroke="#5e493a" stroke-width="2.5"/>
+                  <ellipse cx="105" cy="50" rx="5" ry="16" transform="rotate(18 105 50)" fill="#ffccd5"/>
+
+                  <!-- Bunny Head -->
+                  <circle cx="80" cy="78" r="30" fill="#ffffff" stroke="#5e493a" stroke-width="2.5"/>
+                  
+                  <!-- Blushing Cheeks -->
+                  <ellipse cx="63" cy="85" rx="6" ry="4" fill="#ffb3c6" opacity="0.8"/>
+                  <ellipse cx="97" cy="85" rx="6" ry="4" fill="#ffb3c6" opacity="0.8"/>
+                  
+                  <!-- Happy Sparkle Eyes -->
+                  <path d="M 64 74 Q 69 68 74 74" stroke="#5e493a" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+                  <path d="M 86 74 Q 91 68 96 74" stroke="#5e493a" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+                  <circle cx="70" cy="71" r="1" fill="#5e493a"/>
+                  <circle cx="92" cy="71" r="1" fill="#5e493a"/>
+                  
+                  <!-- Cute Pink Nose & Smile -->
+                  <polygon points="78,80 82,80 80,83" fill="#fb6f92"/>
+                  <path d="M 80 83 L 80 87 M 80 87 Q 76 91 73 88 M 80 87 Q 84 91 87 88" stroke="#5e493a" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+                  <!-- Little Body -->
+                  <ellipse cx="80" cy="120" rx="26" ry="24" fill="#ffffff" stroke="#5e493a" stroke-width="2.5"/>
+                  <ellipse cx="80" cy="122" rx="16" ry="14" fill="#fff5f7"/>
+
+                  <!-- Gift Box Held in Paws -->
+                  <g class="mascot-gift-box">
+                    <rect x="62" y="108" width="36" height="34" rx="4" fill="#ffd166" stroke="#5e493a" stroke-width="2.2"/>
+                    <!-- Gift Lid -->
+                    <rect x="59" y="104" width="42" height="8" rx="2" fill="#ff9f1c" stroke="#5e493a" stroke-width="2.2"/>
+                    <!-- Ribbon -->
+                    <rect x="76" y="104" width="8" height="38" fill="#fb6f92"/>
+                    <rect x="62" y="120" width="36" height="6" fill="#fb6f92"/>
+                    <!-- Big Ribbon Bow -->
+                    <path d="M 80 104 C 70 96 66 102 76 104 C 70 106 72 110 80 104 Z" fill="#ff4d6d" stroke="#5e493a" stroke-width="1.5"/>
+                    <path d="M 80 104 C 90 96 94 102 84 104 C 90 106 88 110 80 104 Z" fill="#ff4d6d" stroke="#5e493a" stroke-width="1.5"/>
+                    <circle cx="80" cy="104" r="3" fill="#ffccd5"/>
+                  </g>
+
+                  <!-- Bunny Paws Holding Gift -->
+                  <circle cx="61" cy="116" r="6" fill="#fff" stroke="#5e493a" stroke-width="2"/>
+                  <circle cx="99" cy="116" r="6" fill="#fff" stroke="#5e493a" stroke-width="2"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Scrapbook stickers decoration -->
+            <div class="scrap-sticker sticker-heart-stamp">💌</div>
+            <div class="scrap-sticker sticker-strawberry">🍓</div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE: Interactive Candle Blowing, Love Question, Surprise Unlocking -->
+        <div class="welcome-col welcome-right-side">
+          <div class="paper-card craft-sheet right-craft-card">
+            <div class="pin-decoration pin-gold"></div>
+            <div class="washi-tape washi-tape-mini washi-lavender"></div>
+
+            <div class="interactive-candle-panel">
+              <span class="cute-badge">✨ Make A Wish! ✨</span>
+              <h2 class="handwritten-title">Blow the Candles, Birthday Girl! 🕯️</h2>
+              <p class="sweet-prompt-p">Close your eyes, make the sweetest wish in your heart, and tap the magic button below!</p>
+
+              <!-- Animated interactive cake with blowable candles -->
+              <div class="interactive-cake-box">
+                <div class="cake-glow-aurora" id="cakeGlowAurora"></div>
+                <div class="candle-scene">
+                  
+                  <!-- Three interactive candles with animatable flames and smoke puffs -->
+                  <div class="candles-rack">
+                    
+                    <!-- Candle 1 -->
+                    <div class="candle-stick candle-blue">
+                      <div class="candle-wick"></div>
+                      <div class="candle-flame candle-flame-1" id="flame1">
+                        <div class="flame-core"></div>
+                      </div>
+                      <div class="smoke-puff hidden" id="smoke1">
+                        <span></span><span></span><span></span>
+                      </div>
+                    </div>
+
+                    <!-- Candle 2 (Middle, taller) -->
+                    <div class="candle-stick candle-pink candle-tall">
+                      <div class="candle-wick"></div>
+                      <div class="candle-flame candle-flame-2" id="flame2">
+                        <div class="flame-core"></div>
+                      </div>
+                      <div class="smoke-puff hidden" id="smoke2">
+                        <span></span><span></span><span></span>
+                      </div>
+                    </div>
+
+                    <!-- Candle 3 -->
+                    <div class="candle-stick candle-yellow">
+                      <div class="candle-wick"></div>
+                      <div class="candle-flame candle-flame-3" id="flame3">
+                        <div class="flame-core"></div>
+                      </div>
+                      <div class="smoke-puff hidden" id="smoke3">
+                        <span></span><span></span><span></span>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Mini Interactive Cake Base SVG -->
+                  <svg viewBox="0 0 200 110" class="mini-cake-base-svg">
+                    <!-- Frosting Base -->
+                    <rect x="30" y="40" width="140" height="60" rx="12" fill="#fff5ea" stroke="#d68c98" stroke-width="2.5"/>
+                    <path d="M 30 55 Q 50 68 70 55 Q 90 68 110 55 Q 130 68 150 55 Q 160 63 170 55 L 170 40 L 30 40 Z" fill="#ffb3c6"/>
+                    <line x1="30" y1="85" x2="170" y2="85" stroke="#fbc3bc" stroke-width="3" stroke-dasharray="6 6"/>
+                    <ellipse cx="100" cy="100" rx="80" ry="8" fill="#e8cfd4" opacity="0.6"/>
+                    <!-- Strawberry Toppings -->
+                    <circle cx="55" cy="36" r="7" fill="#ff4d6d"/>
+                    <circle cx="100" cy="35" r="8" fill="#ff4d6d"/>
+                    <circle cx="145" cy="36" r="7" fill="#ff4d6d"/>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Button 1: Blow the Candles -->
+              <div class="action-btn-wrap" id="blowButtonArea">
+                <button class="cute-pill-btn blow-btn" id="btnBlowCandles">
+                  <span class="btn-sparkle">✨</span>
+                  <span class="btn-text">Blow the Candles 🕯️</span>
+                  <span class="btn-sparkle">✨</span>
+                </button>
+              </div>
+
+              <!-- REVEALED AFTER BLOWING CANDLES -->
+              <div class="after-blow-stage hidden" id="afterBlowStage">
+                
+                <!-- Animated Yay Banner -->
+                <div class="yay-celebration-banner bounce-in">
+                  <div class="confetti-ribbon">🎉 💖 🎂 🌸</div>
+                  <h3 class="yay-title">YAYYY! HAPPY BIRTHDAY! 🎉💗</h3>
+                  <p class="yay-subtitle">May all your wishes come true, my prettiest angel!</p>
+                </div>
+
+                <!-- Cute Love Question Section -->
+                <div class="love-question-box paper-polaroid-style" id="loveQuestionBox">
+                  <div class="tape-strip washi-mint"></div>
+                  <h4 class="love-question-text">you are my Bestfriend? 🥹💗</h4>
+                  
+                  <div class="love-btn-options">
+                    <button class="choice-btn yes-btn" id="btnLoveYes">
+                      <span>YES 💗</span>
+                    </button>
+                    <button class="choice-btn no-btn" id="btnLoveNo">
+                      <span>NO 🙈</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Celebratory Answer Banner (When YES clicked) -->
+                <div class="yay-yes-message hidden" id="yayYesMessage">
+                  <div class="big-congrats-bubble bounce-in">
+                    <div class="stars-cluster">⭐ 💕 💖 ✨</div>
+                    <h3>YAHHH! I KNEW IT! 💗🎉</h3>
+                    <p>You just made my heart the happiest in the universe! 🥰</p>
+                    <div class="unlocking-countdown">
+                      <span class="spinner-heart">💖</span>
+                      <span>Opening your scrapbook surprises in a moment...</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Scrapbook aesthetic stickers -->
+            <div class="scrap-sticker sticker-ribbon-bow">🎀</div>
+            <div class="scrap-sticker sticker-coffee-cup">☕</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =================================================== -->
+    <!-- SCREEN 2: CHOOSE YOUR SURPRISE (Gift Selection)    -->
+    <!-- =================================================== -->
+    <section class="scrapbook-page page-hidden" id="page-gifts">
+      <!-- Washi tape and push pins -->
+      <div class="washi-tape washi-tape-center washi-gingham-pink"></div>
+
+      <div class="gifts-container-craft">
+        <!-- Main Top Heading -->
+        <header class="gifts-header text-center">
+          <div class="scrapbook-tag">HANDMADE WITH LOVE JUST FOR YOU</div>
+          <h2 class="gifts-main-title">YAY! Choose Your Gift, Umam! 💗</h2>
+          <p class="gifts-main-subtitle">Every gift has a special piece of my heart tucked inside. Click any to open it! ✨</p>
+          <div class="gifts-progress-counter-wrap">
+            <span class="gifts-progress-pill" id="giftsProgressPill">Gifts Explored: <strong id="giftsCountNum">0</strong> / 3 🎁</span>
+          </div>
+        </header>
+
+        <!-- 3 Gift Cards in an aesthetic scrapbook row/grid -->
+        <div class="gifts-cards-grid">
+          
+          <!-- GIFT CARD 1: A Love Letter -->
+          <div class="gift-card craft-sheet gift-1-card" id="cardGift1" tabindex="0" role="button" aria-label="Open Gift 1: A Love Letter">
+            <div class="washi-tape washi-card-corner washi-yellow-dots"></div>
+            <div class="gift-badges-row">
+              <span class="gift-number-badge">Gift 1</span>
+              <span class="gift-opened-pill hidden" id="badgeGift1">✓ Opened 💖</span>
+            </div>
+            
+            <div class="gift-illustration-box">
+              <!-- Cute Envelope with flowers and heart sticker SVG -->
+              <svg viewBox="0 0 200 170" class="gift-preview-svg">
+                <!-- Floral Background Sprigs -->
+                <path d="M 40 70 Q 20 40 45 20 Q 55 45 50 70" stroke="#70a9a1" stroke-width="2.5" fill="none"/>
+                <circle cx="45" cy="20" r="7" fill="#ffb3c6"/>
+                <circle cx="30" cy="35" r="5" fill="#ffd166"/>
+                <path d="M 160 70 Q 180 40 155 20 Q 145 45 150 70" stroke="#70a9a1" stroke-width="2.5" fill="none"/>
+                <circle cx="155" cy="20" r="7" fill="#ffb3c6"/>
+                <circle cx="170" cy="35" r="5" fill="#a2d2ff"/>
+
+                <!-- Envelope Body -->
+                <rect x="30" y="55" width="140" height="95" rx="10" fill="#fff9f0" stroke="#d4a373" stroke-width="2.5"/>
+                <!-- Envelope Flap (Back) -->
+                <path d="M 30 55 L 100 115 L 170 55" stroke="#d4a373" stroke-width="2.5" fill="#faedcd"/>
+                <!-- Peeking Letter Paper -->
+                <rect x="45" y="32" width="110" height="50" rx="5" fill="#ffffff" stroke="#e8cfd4" stroke-width="2"/>
+                <line x1="55" y1="45" x2="115" y2="45" stroke="#e07a93" stroke-width="2" stroke-linecap="round"/>
+                <line x1="55" y1="55" x2="135" y2="55" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="55" y1="65" x2="105" y2="65" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+                
+                <!-- Envelope Lower Fold -->
+                <path d="M 30 150 L 100 100 L 170 150" fill="#fefae0" stroke="#d4a373" stroke-width="2.5"/>
+                <!-- Side folds -->
+                <path d="M 30 55 L 90 105 L 30 150 Z" fill="#faedcd" stroke="#d4a373" stroke-width="2"/>
+                <path d="M 170 55 L 110 105 L 170 150 Z" fill="#faedcd" stroke="#d4a373" stroke-width="2"/>
+
+                <!-- Heart Wax Seal / Sticker -->
+                <circle cx="100" cy="102" r="14" fill="#ff4d6d" stroke="#c9184a" stroke-width="2"/>
+                <path d="M 100 106 C 96 100 90 100 93 96 C 96 93 100 96 100 98 C 100 96 104 93 107 96 C 110 100 104 100 100 106 Z" fill="#fff"/>
+              </svg>
+            </div>
+
+            <div class="gift-card-info">
+              <h3 class="gift-title">A Love Letter 💌</h3>
+              <p class="gift-label-desc">Gift 1 — A Little Letter For You</p>
+              <span class="click-to-open-hint">Tap to unfold letter ✨</span>
+            </div>
+            <div class="gift-hover-sparkle">💖</div>
+          </div>
+
+          <!-- GIFT CARD 2: Flowers For You -->
+          <div class="gift-card craft-sheet gift-2-card" id="cardGift2" tabindex="0" role="button" aria-label="Open Gift 2: Some Flowers For You">
+            <div class="washi-tape washi-card-corner washi-pink-stripes"></div>
+            <div class="gift-badges-row">
+              <span class="gift-number-badge">Gift 2</span>
+              <span class="gift-opened-pill hidden" id="badgeGift2">✓ Opened 💖</span>
+            </div>
+
+            <div class="gift-illustration-box">
+              <!-- Cute Cartoon Cat Holding Flowers SVG -->
+              <svg viewBox="0 0 200 170" class="gift-preview-svg">
+                <!-- Cute Cat Ears -->
+                <polygon points="68,52 82,22 96,48" fill="#fff" stroke="#5e493a" stroke-width="2.5"/>
+                <polygon points="73,48 83,28 92,46" fill="#ffccd5"/>
+                <polygon points="104,48 118,22 132,52" fill="#fff" stroke="#5e493a" stroke-width="2.5"/>
+                <polygon points="108,46 117,28 127,48" fill="#ffccd5"/>
+                
+                <!-- Party Bow on Head -->
+                <ellipse cx="100" cy="38" rx="8" ry="4" fill="#fb6f92"/>
+                <circle cx="100" cy="38" r="3" fill="#ffe5ec"/>
+
+                <!-- Cat Head -->
+                <circle cx="100" cy="62" r="28" fill="#ffffff" stroke="#5e493a" stroke-width="2.5"/>
+                <!-- Blushing Cheeks -->
+                <circle cx="83" cy="68" r="5" fill="#ffb3c6" opacity="0.8"/>
+                <circle cx="117" cy="68" r="5" fill="#ffb3c6" opacity="0.8"/>
+                <!-- Happy Curved Eyes -->
+                <path d="M 83 58 Q 88 53 93 58" stroke="#5e493a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <path d="M 107 58 Q 112 53 117 58" stroke="#5e493a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <!-- Nose & Mouth -->
+                <polygon points="98,64 102,64 100,66" fill="#fb6f92"/>
+                <path d="M 100 66 Q 96 70 94 68 M 100 66 Q 104 70 106 68" stroke="#5e493a" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+                <!-- Cat Body -->
+                <ellipse cx="100" cy="115" rx="28" ry="26" fill="#ffffff" stroke="#5e493a" stroke-width="2.5"/>
+
+                <!-- Big Lush Bouquet of Flowers in arms -->
+                <g class="bouquet-group" transform="translate(0, 5)">
+                  <!-- Bouquet Kraft Paper Wrapping -->
+                  <polygon points="100,145 68,95 132,95" fill="#edd6b8" stroke="#b08968" stroke-width="2"/>
+                  <!-- Bouquet Bow -->
+                  <path d="M 100 115 C 90 108 86 114 96 116 C 90 118 92 122 100 116 Z" fill="#ff4d6d"/>
+                  <path d="M 100 115 C 110 108 114 114 104 116 C 110 118 108 122 100 116 Z" fill="#ff4d6d"/>
+                  <circle cx="100" cy="115" r="2.5" fill="#fff"/>
+
+                  <!-- Flowers -->
+                  <!-- Tulips -->
+                  <path d="M 78 85 C 72 75 84 65 88 78 C 92 65 104 75 98 85 Z" fill="#ff758f"/>
+                  <path d="M 102 85 C 96 75 108 65 112 78 C 116 65 128 75 122 85 Z" fill="#ff4d6d"/>
+                  <!-- Daisy in center -->
+                  <circle cx="100" cy="90" r="12" fill="#fff" stroke="#ffccd5" stroke-width="1.5"/>
+                  <circle cx="100" cy="90" r="5" fill="#ffd166"/>
+                  <!-- Yellow Bloom -->
+                  <circle cx="68" cy="92" r="8" fill="#ffd166"/>
+                  <circle cx="68" cy="92" r="3" fill="#ff9f1c"/>
+                  <!-- Lavender Bloom -->
+                  <circle cx="132" cy="90" r="8" fill="#cdb4db"/>
+                  <circle cx="132" cy="90" r="3" fill="#a2d2ff"/>
+                </g>
+
+                <!-- Paws Holding Bouquet -->
+                <circle cx="78" cy="112" r="6" fill="#fff" stroke="#5e493a" stroke-width="2"/>
+                <circle cx="122" cy="112" r="6" fill="#fff" stroke="#5e493a" stroke-width="2"/>
+              </svg>
+            </div>
+
+            <div class="gift-card-info">
+              <h3 class="gift-title">Flowers For You 🌷</h3>
+              <p class="gift-label-desc">Gift 2 — Some Flowers For You</p>
+              <span class="click-to-open-hint">Tap to visit flower garden 🌸</span>
+            </div>
+            <div class="gift-hover-sparkle">🌷</div>
+          </div>
+
+          <!-- GIFT CARD 3: My Little Diary -->
+          <div class="gift-card craft-sheet gift-3-card" id="cardGift3" tabindex="0" role="button" aria-label="Open Gift 3: My Little Diary">
+            <div class="washi-tape washi-card-corner washi-blue-stripes"></div>
+            <div class="gift-badges-row">
+              <span class="gift-number-badge">Gift 3</span>
+              <span class="gift-opened-pill hidden" id="badgeGift3">✓ Opened 💖</span>
+            </div>
+
+            <div class="gift-illustration-box">
+              <!-- Decorated Diary SVG -->
+              <svg viewBox="0 0 200 170" class="gift-preview-svg">
+                <!-- Diary Drop Shadow & Pages Stack -->
+                <rect x="48" y="32" width="114" height="116" rx="8" fill="#e9ecef" stroke="#ced4da" stroke-width="2"/>
+                <rect x="44" y="30" width="114" height="116" rx="8" fill="#f8f9fa" stroke="#ced4da" stroke-width="2"/>
+
+                <!-- Diary Hardcover (Pastel Pink) -->
+                <rect x="40" y="28" width="112" height="116" rx="9" fill="#ffccd5" stroke="#e07a93" stroke-width="2.5"/>
+                
+                <!-- Diary Spine / Stitching -->
+                <rect x="40" y="28" width="16" height="116" rx="4" fill="#fb6f92"/>
+                <line x1="56" y1="28" x2="56" y2="144" stroke="#c9184a" stroke-width="1.5"/>
+
+                <!-- Ribbon Bookmark Hanging Down -->
+                <path d="M 98 140 L 98 162 L 103 156 L 108 162 L 108 140 Z" fill="#ff4d6d"/>
+
+                <!-- Cover Stickers & Doodles -->
+                <!-- Washi Tape On Cover -->
+                <rect x="70" y="38" width="55" height="14" rx="2" fill="#a2d2ff" opacity="0.85" transform="rotate(-6 70 38)"/>
+                <!-- Gold Title Plate -->
+                <rect x="68" y="65" width="62" height="36" rx="5" fill="#fffdfa" stroke="#e8a5b2" stroke-width="2"/>
+                <text x="99" y="80" font-family="'Patrick Hand', cursive" font-size="11" fill="#c9184a" text-anchor="middle">MY LITTLE</text>
+                <text x="99" y="93" font-family="'Patrick Hand', cursive" font-size="10" fill="#777" text-anchor="middle">DIARY 📔</text>
+                
+                <!-- Cute Heart & Star Stickers -->
+                <circle cx="75" cy="118" r="8" fill="#ffd166"/>
+                <text x="75" y="122" font-size="9" text-anchor="middle">⭐</text>
+
+                <circle cx="125" cy="116" r="9" fill="#fff" stroke="#ffb3c6" stroke-width="1.5"/>
+                <text x="125" y="120" font-size="10" text-anchor="middle">💖</text>
+
+                <!-- Little Bow Doodle -->
+                <path d="M 128 42 C 122 36 120 40 126 42 C 120 44 122 47 128 43 Z" fill="#fb6f92"/>
+                <path d="M 128 42 C 134 36 136 40 130 42 C 136 44 134 47 128 43 Z" fill="#fb6f92"/>
+              </svg>
+            </div>
+
+            <div class="gift-card-info">
+              <h3 class="gift-title">My Little Diary 📔</h3>
+              <p class="gift-label-desc">Gift 3 — A Little Piece Of My Heart</p>
+              <span class="click-to-open-hint">Tap to open secret pages 💌</span>
+            </div>
+            <div class="gift-hover-sparkle">✨</div>
+          </div>
+
+        </div>
+
+        <!-- UNLOCKED WHEN ALL 3 GIFTS ARE OPENED -->
+        <div class="all-gifts-unlocked-section hidden" id="allGiftsUnlockedSection">
+          <div class="unlocked-scrap-banner bounce-in">
+            <div class="unlocked-stars">✨ 🎂 💖 🎉 🌸</div>
+            <h3 class="unlocked-title">All 3 Gifts Opened! 🎁✨</h3>
+            <p class="unlocked-sub">You've explored all your birthday gifts! A magical secret final surprise has unlocked just for you...</p>
+            <div class="unlocked-btn-wrapper">
+              <button class="cute-pill-btn next-surprise-btn" id="btnGoToFinalCake">
+                <span class="btn-sparkle">✨</span>
+                <span>Next: 4 Candle Wishes 🎂✨ →</span>
+                <span class="btn-sparkle">✨</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scrapbook Footnote -->
+        <footer class="gifts-footer">
+          <p class="handmade-stamp-text">❤️ 100% Handcrafted with Infinite Love for Your Birthday ❤️</p>
+        </footer>
+      </div>
+    </section>
+
+
+    <!-- =================================================== -->
+    <!-- GIFT 1: HANDMADE LOVE LETTER 💌 (Two-Column Layout)  -->
+    <!-- =================================================== -->
+    <section class="scrapbook-page page-hidden" id="page-gift-1">
+      <div class="gift-page-wrapper">
+        
+        <!-- Header with Back Button -->
+        <div class="subpage-nav-bar">
+          <button class="back-to-gifts-btn" data-target="page-gifts">
+            <span class="back-arrow">←</span>
+            <span>Back to Gifts</span>
+          </button>
+          <div class="page-title-badge">Gift 1: Handmade Letter 💌</div>
+        </div>
+
+        <!-- Two Column Scrapbook Layout -->
+        <div class="love-letter-columns">
+          
+          <!-- LEFT SIDE: Handmade Envelope & Textured Craft Paper Letter -->
+          <div class="letter-left-column">
+            
+            <!-- Envelope Peek Graphic on top -->
+            <div class="envelope-accent-top">
+              <div class="stamp-postmark">
+                <span class="postmark-city">LOVE POST</span>
+                <span class="postmark-date">OCTOBER 24</span>
+                <span class="postmark-wave">~~~~</span>
+              </div>
+              <div class="envelope-wax-tag">
+                <span class="seal-icon">💌</span>
+                <span>Sealed with a Love</span>
+              </div>
+            </div>
+
+            <!-- Textured Craft Paper Letter Container -->
+            <div class="parchment-letter-sheet" id="loveLetterContent">
+              <!-- Corner Washi Tapes -->
+              <div class="washi-tape washi-tape-mini washi-tape-letter-tl washi-pink-dots"></div>
+              <div class="washi-tape washi-tape-mini washi-tape-letter-br washi-yellow-dots"></div>
+              
+              <!-- Letter Header -->
+              <div class="letter-header">
+                <div class="tiny-pressed-flower">🌸</div>
+                <h2 class="letter-to-heading">To My Favourite Person 💗</h2>
+                <div class="tiny-pressed-flower">🌸</div>
+              </div>
+
+              <!-- Romantic Editable / Heartfelt Letter Body -->
+              <div class="letter-body-text" id="editableLetterText">
+                <p class="letter-para salutation">Butki <span class="recipient-name-inline" id="letterNamePlaceholder">baby</span>,</p>
+                
+                <p class="letter-para">
+                  Happy Birthday, Butki! ❤️🎂
+
+                I honestly don’t know how you came into my life and made it so much better. You’re not just a person I talk to—you’re like my 
+                little happiness dose. Somehow, whenever you’re around, everything feels a little lighter and happier.
+                </p>
+
+                <p class="letter-para">
+                  I know I always make fun of you, tease you, and annoy you 😂, but behind all of that, you really mean so much to me. 
+                  Sometimes I wonder how someone can be this good and still be this annoying at the same time. 😭❤️
+                </p>
+
+                <p class="letter-para">
+                  You have your own crazy ways, your little dramas, and all those things I love making fun of—but honestly, 
+                  I wouldn’t want you any other way.
+                  Thank you for coming into my life and becoming such a special part of it. I hope you always stay happy, keep smiling, and get all the love and happiness you deserve.
+
+                  Happy Birthday, Butki. ❤️
+                  You’ll always be one of the most precious people in my life, and I’m genuinely grateful to have you. 🫶🏻🎂
+                </p>
+
+                <p class="letter-para letter-closing">
+                  Forever and always yours,<br>
+                  <span class="letter-signature">Your Butka 💗✨</span>
+                </p>
+              </div>
+
+
+              <!-- Doodles along letter edges -->
+              <div class="letter-doodle doodle-heart-sparkle">💖</div>
+              <div class="letter-doodle doodle-ribbon">🎀</div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT SIDE: Cute Romantic Photo Frames, Vintage Camera, Balloons -->
+          <div class="letter-right-column">
+            
+            <!-- Vintage Camera Illustration -->
+            <div class="vintage-camera-wrapper">
+              <div class="camera-polaroid-svg">
+                <svg viewBox="0 0 160 110" width="130" height="90">
+                  <!-- Camera Body -->
+                  <rect x="15" y="25" width="130" height="75" rx="14" fill="#f8edeb" stroke="#5e493a" stroke-width="2.5"/>
+                  <rect x="15" y="45" width="130" height="15" fill="#fcd5ce"/>
+                  <!-- Top Viewfinder & Shutter -->
+                  <rect x="35" y="16" width="30" height="10" rx="3" fill="#ffe5d9" stroke="#5e493a" stroke-width="2"/>
+                  <rect x="110" y="14" width="20" height="12" rx="4" fill="#fb6f92" stroke="#5e493a" stroke-width="2"/>
+                  <!-- Camera Lens -->
+                  <circle cx="80" cy="62" r="28" fill="#5e493a"/>
+                  <circle cx="80" cy="62" r="23" fill="#e9ecef"/>
+                  <circle cx="80" cy="62" r="17" fill="#343a40"/>
+                  <circle cx="74" cy="56" r="5" fill="#fff" opacity="0.8"/>
+                  <!-- Flash Bulb -->
+                  <circle cx="125" cy="35" r="7" fill="#ffd166" stroke="#5e493a" stroke-width="1.5"/>
+                  <!-- Smile Label -->
+                  <text x="45" y="88" font-family="'Patrick Hand', cursive" font-size="10" fill="#5e493a">smile! 📸</text>
+                </svg>
+              </div>
+              <div class="camera-floating-balloons">
+                <span class="balloon b-pink">🎈</span>
+                <span class="balloon b-blue">🎈</span>
+                <span class="balloon b-lavender">🎈</span>
+              </div>
+            </div>
+
+            <!-- Romantic Photo Frame 1 (Polaroid Style with editable image) -->
+            <div class="polaroid-frame polaroid-tilt-left" id="frame1Container">
+              <div class="washi-tape washi-tape-polaroid washi-pink-dots"></div>
+              <div class="paper-clip paper-clip-left"></div>
+              
+              <div class="polaroid-photo-box" id="photoBox1">
+                <img src="WhatsApp Image 2026-10-19 at 06.44.54 (1).jpeg" alt="Couple Memory 1" class="polaroid-img has-photo" id="imgPlaceholder1" onerror="this.style.display='none'; document.getElementById('defaultArt1').classList.remove('hidden');" />
+                <div class="default-photo-art art-couple-1 hidden" id="defaultArt1">
+                  <svg viewBox="0 0 200 180" width="100%" height="100%">
+                    <rect width="200" height="180" fill="#ffe5ec"/>
+                    <circle cx="100" cy="70" r="50" fill="#ffccd5" opacity="0.6"/>
+                    <circle cx="82" cy="65" r="20" fill="#5e493a"/>
+                    <circle cx="118" cy="70" r="18" fill="#e07a93"/>
+                    <path d="M 60 130 C 60 95 100 95 100 130 Z" fill="#5e493a"/>
+                    <path d="M 100 130 C 100 100 140 100 140 130 Z" fill="#fb6f92"/>
+                    <text x="94" y="42" font-size="20">💖</text>
+                    <text x="90" y="160" font-family="'Patrick Hand', cursive" font-size="13" fill="#888" text-anchor="middle">Our Sweet Memory 📸</text>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="polaroid-caption">
+                <span class="caption-text" contenteditable="true" title="Click to edit caption">My favorite smile in the whole universe 📸💗</span>
+              </div>
+            </div>
+
+            <!-- Romantic Photo Frame 2 (Polaroid Style with editable image) -->
+            <div class="polaroid-frame polaroid-tilt-right" id="frame2Container">
+              <div class="washi-tape washi-tape-polaroid washi-blue-stripes"></div>
+              <div class="pushpin-icon">📍</div>
+
+              <div class="polaroid-photo-box" id="photoBox2">
+                <img src="WhatsApp Image 2026-10-19 at 06.44.54.jpeg" alt="Couple Memory 2" class="polaroid-img has-photo" id="imgPlaceholder2" onerror="this.style.display='none'; document.getElementById('defaultArt2').classList.remove('hidden');" />
+                <div class="default-photo-art art-couple-2 hidden" id="defaultArt2">
+                  <svg viewBox="0 0 200 180" width="100%" height="100%">
+                    <rect width="200" height="180" fill="#e8dff5"/>
+                    <circle cx="100" cy="80" r="55" fill="#cdb4db" opacity="0.4"/>
+                    <ellipse cx="100" cy="140" rx="90" ry="30" fill="#b5e2fa"/>
+                    <circle cx="88" cy="85" r="16" fill="#5e493a"/>
+                    <circle cx="112" cy="88" r="15" fill="#ff758f"/>
+                    <path d="M 72 135 C 72 108 102 108 102 135 Z" fill="#5e493a"/>
+                    <path d="M 98 135 C 98 112 128 112 128 135 Z" fill="#ff758f"/>
+                    <text x="94" y="55" font-size="18">✨</text>
+                    <text x="135" y="45" font-size="14">⭐</text>
+                    <text x="90" y="160" font-family="'Patrick Hand', cursive" font-size="13" fill="#888" text-anchor="middle">Magic With You ✨</text>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="polaroid-caption">
+                <span class="caption-text" contenteditable="true" title="Click to edit caption">Every second with you is pure magic ✨💖</span>
+              </div>
+            </div>
+
+            <!-- Stickers & flowers on right -->
+            <div class="floating-scrap-decorations">
+              <span class="f-sticker">🌷</span>
+              <span class="f-sticker">🎀</span>
+              <span class="f-sticker">🧁</span>
+              <span class="f-sticker">⭐</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Back to Gifts at bottom -->
+        <div class="page-bottom-nav">
+          <button class="back-to-gifts-btn-large" data-target="page-gifts">
+            <span>← Back to Choose Another Gift 🎁</span>
+          </button>
+          <button class="next-surprise-shortcut-btn hidden" id="shortcutNextSurprise1">
+            <span>Next: 4 Candle Wishes 🎂✨ →</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =================================================== -->
+    <!-- GIFT 2: SOME FLOWERS FOR YOU 🌷🐱 (Dreamy Page)     -->
+    <!-- =================================================== -->
+    <section class="scrapbook-page page-hidden" id="page-gift-2">
+      <div class="gift-page-wrapper flowers-page-bg">
+        
+        <!-- Header with Back Button -->
+        <div class="subpage-nav-bar">
+          <button class="back-to-gifts-btn" data-target="page-gifts">
+            <span class="back-arrow">←</span>
+            <span>Back to Gifts</span>
+          </button>
+          <div class="page-title-badge">Gift 2: Some Flowers For You 🌷🐱</div>
+        </div>
+
+        <!-- Flower Petals Canvas Overlay for this section -->
+        <div class="flower-dreamy-content">
+          
+          <!-- Center Banner with Heartfelt Romantic Typography -->
+          <div class="flower-center-banner">
+            <div class="washi-tape washi-tape-center washi-lavender"></div>
+            <span class="flower-sparkle-top">🌸 🌷 🌺 🌼 💐</span>
+            <h2 class="flower-main-title">Some Flowers For You 🌸</h2>
+            <p class="flower-sub-quote">“Because you deserve all the beautiful things in this world, today and forever.” 💗</p>
+          </div>
+
+          <!-- Cute Kitten Holding Bouquet (Animated Interactive Centerpiece) -->
+          <div class="kitten-centerpiece-area">
+            <div class="kitten-card-platform">
+              
+              <div class="kitten-interactive-avatar" id="kittenAvatar" title="Click me for a cute meow & extra blossoms!">
+                <!-- Adorable Kitten SVG with Party Bow and Bouquet -->
+                <svg viewBox="0 0 240 240" class="animated-kitten-svg" id="animatedKitten">
+                  <defs>
+                    <linearGradient id="bouquetPaperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#fff1e6"/>
+                      <stop offset="100%" stop-color="#ddbea9"/>
+                    </linearGradient>
+                  </defs>
+
+                  <!-- Kitten Tail Wagging in back -->
+                  <path d="M 175 180 Q 215 165 210 135 Q 200 120 185 140" stroke="#f8edeb" stroke-width="12" stroke-linecap="round" fill="none" class="kitten-tail-anim"/>
+                  <path d="M 175 180 Q 215 165 210 135 Q 200 120 185 140" stroke="#5e493a" stroke-width="2.5" stroke-linecap="round" fill="none" class="kitten-tail-anim"/>
+
+                  <!-- Kitten Ears -->
+                  <g class="kitten-ears">
+                    <!-- Left Ear -->
+                    <polygon points="75,82 86,35 110,68" fill="#ffffff" stroke="#5e493a" stroke-width="3"/>
+                    <polygon points="80,75 88,44 104,66" fill="#ffccd5"/>
+                    <!-- Right Ear -->
+                    <polygon points="128,68 152,35 163,82" fill="#ffffff" stroke="#5e493a" stroke-width="3"/>
+                    <polygon points="134,66 150,44 158,75" fill="#ffccd5"/>
+                  </g>
+
+                  <!-- Cute Birthday Bow on Head -->
+                  <g class="kitten-head-bow">
+                    <circle cx="120" cy="50" r="5" fill="#ff4d6d"/>
+                    <ellipse cx="110" cy="50" rx="9" ry="5" fill="#fb6f92" transform="rotate(-15 110 50)"/>
+                    <ellipse cx="130" cy="50" rx="9" ry="5" fill="#fb6f92" transform="rotate(15 130 50)"/>
+                    <circle cx="120" cy="50" r="2" fill="#fff"/>
+                  </g>
+
+                  <!-- Kitten Head -->
+                  <circle cx="119" cy="98" r="42" fill="#ffffff" stroke="#5e493a" stroke-width="3"/>
+
+                  <!-- Calico / Patch Marking -->
+                  <path d="M 85 80 Q 100 85 92 105 Q 80 100 85 80 Z" fill="#ffd7ba" opacity="0.6"/>
+                  
+                  <!-- Blushing Pink Cheeks -->
+                  <ellipse cx="94" cy="108" rx="8" ry="5" fill="#ffb3c6" opacity="0.85"/>
+                  <ellipse cx="144" cy="108" rx="8" ry="5" fill="#ffb3c6" opacity="0.85"/>
+
+                  <!-- Kitten Big Sparkle Eyes -->
+                  <g class="kitten-eyes-group">
+                    <ellipse cx="98" cy="94" rx="7" ry="9" fill="#5e493a"/>
+                    <circle cx="96" cy="90" r="3.2" fill="#ffffff"/>
+                    <circle cx="100" cy="97" r="1.5" fill="#ffffff"/>
+
+                    <ellipse cx="140" cy="94" rx="7" ry="9" fill="#5e493a"/>
+                    <circle cx="138" cy="90" r="3.2" fill="#ffffff"/>
+                    <circle cx="142" cy="97" r="1.5" fill="#ffffff"/>
+                  </g>
+
+                  <!-- Pink Button Nose & Cat Mouth -->
+                  <polygon points="116,104 122,104 119,108" fill="#fb6f92"/>
+                  <path d="M 119 108 L 119 113 M 119 113 Q 112 118 108 114 M 119 113 Q 126 118 130 114" stroke="#5e493a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+                  <!-- Whiskers -->
+                  <line x1="86" y1="104" x2="65" y2="100" stroke="#5e493a" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="86" y1="109" x2="62" y2="112" stroke="#5e493a" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="152" y1="104" x2="173" y2="100" stroke="#5e493a" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="152" y1="109" x2="176" y2="112" stroke="#5e493a" stroke-width="2" stroke-linecap="round"/>
+
+                  <!-- Kitten Chubby Body -->
+                  <ellipse cx="119" cy="170" rx="42" ry="40" fill="#ffffff" stroke="#5e493a" stroke-width="3"/>
+                  <ellipse cx="119" cy="172" rx="26" ry="24" fill="#fff5f5"/>
+
+                  <!-- Paws At Bottom -->
+                  <ellipse cx="95" cy="204" rx="14" ry="10" fill="#ffffff" stroke="#5e493a" stroke-width="2.5"/>
+                  <ellipse cx="143" cy="204" rx="14" ry="10" fill="#ffffff" stroke="#5e493a" stroke-width="2.5"/>
+
+                  <!-- ===================================== -->
+                  <!-- GORGEOUS LUSH BOUQUET OF FLOWERS      -->
+                  <!-- ===================================== -->
+                  <g class="kitten-lush-bouquet" transform="translate(0, 15)">
+                    <!-- Kraft Paper Wrap -->
+                    <polygon points="119,195 72,130 166,130" fill="url(#bouquetPaperGrad)" stroke="#b08968" stroke-width="2.5"/>
+                    <line x1="119" y1="195" x2="100" y2="130" stroke="#d4a373" stroke-width="1.5"/>
+
+                    <!-- Satin Ribbon Bow -->
+                    <g transform="translate(119, 158)">
+                      <circle cx="0" cy="0" r="5" fill="#ff4d6d"/>
+                      <path d="M 0 0 C -16 -12 -22 6 -3 3 Z" fill="#ff758f" stroke="#c9184a" stroke-width="1.5"/>
+                      <path d="M 0 0 C 16 -12 22 6 3 3 Z" fill="#ff758f" stroke="#c9184a" stroke-width="1.5"/>
+                      <path d="M -2 2 Q -8 18 -12 24" stroke="#ff4d6d" stroke-width="3" stroke-linecap="round" fill="none"/>
+                      <path d="M 2 2 Q 8 18 12 24" stroke="#ff4d6d" stroke-width="3" stroke-linecap="round" fill="none"/>
+                    </g>
+
+                    <!-- Greenery Leaves Behind Flowers -->
+                    <path d="M 85 115 Q 60 95 62 80 Q 78 88 88 108" fill="#a7c957" stroke="#6a994e" stroke-width="1.5"/>
+                    <path d="M 153 115 Q 178 95 176 80 Q 160 88 150 108" fill="#a7c957" stroke="#6a994e" stroke-width="1.5"/>
+                    <path d="M 119 105 Q 119 75 125 70 Q 130 85 125 105" fill="#b5e48c" stroke="#6a994e" stroke-width="1.5"/>
+
+                    <!-- Tulips, Peonies, Daisies, Roses -->
+                    <!-- Center Big Pink Peony -->
+                    <circle cx="119" cy="120" r="18" fill="#ffb3c6" stroke="#fb6f92" stroke-width="2"/>
+                    <circle cx="119" cy="120" r="11" fill="#ff8fa3"/>
+                    <circle cx="119" cy="120" r="5" fill="#ff4d6d"/>
+
+                    <!-- Left Red/Coral Tulip -->
+                    <path d="M 88 115 C 80 100 96 90 102 105 C 108 90 124 100 116 115 Z" fill="#ff4d6d" stroke="#c9184a" stroke-width="2"/>
+
+                    <!-- Right Magenta Tulip -->
+                    <path d="M 122 115 C 114 100 130 90 136 105 C 142 90 158 100 150 115 Z" fill="#ff758f" stroke="#c9184a" stroke-width="2"/>
+
+                    <!-- Cheerful Yellow Daisy -->
+                    <g transform="translate(75, 128)">
+                      <circle cx="0" cy="0" r="14" fill="#ffffff" stroke="#ffccd5" stroke-width="1.5"/>
+                      <circle cx="0" cy="0" r="6" fill="#ffd166"/>
+                    </g>
+
+                    <!-- Soft Lavender Blossom -->
+                    <g transform="translate(163, 128)">
+                      <circle cx="0" cy="0" r="14" fill="#e8dff5" stroke="#cdb4db" stroke-width="1.5"/>
+                      <circle cx="0" cy="0" r="6" fill="#a2d2ff"/>
+                    </g>
+
+                    <!-- Baby's Breath White Dots -->
+                    <circle cx="95" cy="98" r="3" fill="#fff" stroke="#ffb3c6" stroke-width="1"/>
+                    <circle cx="145" cy="98" r="3" fill="#fff" stroke="#ffb3c6" stroke-width="1"/>
+                    <circle cx="70" cy="110" r="3" fill="#fff" stroke="#ffb3c6" stroke-width="1"/>
+                    <circle cx="168" cy="110" r="3" fill="#fff" stroke="#ffb3c6" stroke-width="1"/>
+                  </g>
+
+                  <!-- Kitten Paws Holding Bouquet -->
+                  <circle cx="88" cy="155" r="9" fill="#ffffff" stroke="#5e493a" stroke-width="2.5"/>
+                  <circle cx="150" cy="155" r="9" fill="#ffffff" stroke="#5e493a" stroke-width="2.5"/>
+                </svg>
+              </div>
+
+              <!-- Interactive Speech Bubble on click -->
+              <div class="kitten-speech-balloon" id="kittenSpeech">
+                <span id="kittenSpeechText">Purrrr... for the prettiest birthday princess! 🐾💐</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- THREE AESTHETIC PHOTO FRAMES with Editable Image Placeholders -->
+          <div class="flower-photos-section">
+            <h3 class="aesthetic-section-label">🌸 Prettiest gurl 🌸</h3>
+            
+            <div class="flower-photos-grid">
+              
+              <!-- Frame 1 -->
+              <div class="polaroid-frame flower-frame-1" id="flowerFrame1">
+                <div class="washi-tape washi-tape-polaroid washi-mint"></div>
+                <div class="pressed-flower-sticker">🌼</div>
+
+                <div class="polaroid-photo-box" id="flowerPhotoBox1">
+                  <img src="WhatsApp Image 2026-10-19 at 03.40.01.jpeg" alt="Flower Memory 1" class="polaroid-img has-photo" id="imgFlower1" onerror="this.style.display='none'; document.getElementById('defaultFlowerArt1').classList.remove('hidden');" />
+                  <div class="default-photo-art hidden" id="defaultFlowerArt1">
+                    <svg viewBox="0 0 200 180" width="100%" height="100%">
+                      <rect width="200" height="180" fill="#fff0f3"/>
+                      <circle cx="100" cy="70" r="45" fill="#ffccd5" opacity="0.6"/>
+                      <text x="100" y="75" font-size="34" text-anchor="middle">🌷</text>
+                      <text x="100" y="135" font-family="'Patrick Hand', cursive" font-size="16" fill="#d43a60" text-anchor="middle">A sweet date we loved 🌷</text>
+                    </svg>
+                  </div>
+                </div>
+                <div class="polaroid-caption">
+                  <span class="caption-text" contenteditable="true">Blooming sweeter every single day with you 🌷</span>
+                </div>
+              </div>
+
+              <!-- Frame 2 (Center) -->
+              <div class="polaroid-frame flower-frame-2" id="flowerFrame2">
+                <div class="washi-tape washi-tape-polaroid washi-pink-dots"></div>
+                <div class="pressed-flower-sticker">🌸</div>
+
+                <div class="polaroid-photo-box" id="flowerPhotoBox2">
+                  <img src="WhatsApp Image 2026-10-19 at 03.40.02 (3).jpeg" alt="Flower Memory 2" class="polaroid-img has-photo" id="imgFlower2" onerror="this.style.display='none'; document.getElementById('defaultFlowerArt2').classList.remove('hidden');" />
+                  <div class="default-photo-art hidden" id="defaultFlowerArt2">
+                    <svg viewBox="0 0 200 180" width="100%" height="100%">
+                      <rect width="200" height="180" fill="#f8f9fa"/>
+                      <circle cx="100" cy="70" r="45" fill="#ffd166" opacity="0.4"/>
+                      <text x="100" y="75" font-size="34" text-anchor="middle">💐</text>
+                      <text x="100" y="135" font-family="'Patrick Hand', cursive" font-size="16" fill="#b08968" text-anchor="middle">Your precious smile 💐</text>
+                    </svg>
+                  </div>
+                </div>
+                <div class="polaroid-caption">
+                  <span class="caption-text" contenteditable="true">pretty enough in every colour 💐💖</span>
+                </div>
+              </div>
+
+              <!-- Frame 3 -->
+              <div class="polaroid-frame flower-frame-3" id="flowerFrame3">
+                <div class="washi-tape washi-tape-polaroid washi-yellow-dots"></div>
+                <div class="pressed-flower-sticker">🌺</div>
+
+                <div class="polaroid-photo-box" id="flowerPhotoBox3">
+                  <img src="WhatsApp Image 2026-10-19 at 03.40.01 (1).jpeg" alt="Flower Memory 3" class="polaroid-img has-photo" id="imgFlower3" onerror="this.style.display='none'; document.getElementById('defaultFlowerArt3').classList.remove('hidden');" />
+                  <div class="default-photo-art hidden" id="defaultFlowerArt3">
+                    <svg viewBox="0 0 200 180" width="100%" height="100%">
+                      <rect width="200" height="180" fill="#e8dff5"/>
+                      <circle cx="100" cy="70" r="45" fill="#cdb4db" opacity="0.4"/>
+                      <text x="100" y="75" font-size="34" text-anchor="middle">🌺</text>
+                      <text x="100" y="135" font-family="'Patrick Hand', cursive" font-size="16" fill="#6d597a" text-anchor="middle">Warm memories 🌺</text>
+                    </svg>
+                  </div>
+                </div>
+                <div class="polaroid-caption">
+                  <span class="caption-text" contenteditable="true">Always be happy butki 🌺</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Back to Gifts at bottom -->
+        <div class="page-bottom-nav">
+          <button class="back-to-gifts-btn-large" data-target="page-gifts">
+            <span>← Back to Choose Another Gift 🎁</span>
+          </button>
+          <button class="next-surprise-shortcut-btn hidden" id="shortcutNextSurprise2">
+            <span>Next: 4 Candle Wishes 🎂✨ →</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =================================================== -->
+    <!-- GIFT 3: MY LITTLE DIARY 📔💗 (Handcrafted Journal)  -->
+    <!-- =================================================== -->
+    <section class="scrapbook-page page-hidden" id="page-gift-3">
+      <div class="gift-page-wrapper diary-page-bg">
+        
+        <!-- Header with Back Button -->
+        <div class="subpage-nav-bar">
+          <button class="back-to-gifts-btn" data-target="page-gifts">
+            <span class="back-arrow">←</span>
+            <span>Back to Gifts</span>
+          </button>
+          <div class="page-title-badge">Gift 3: My Little Diary 📔💗</div>
+        </div>
+
+        <!-- Digital Diary / Journal Experience -->
+        <div class="diary-two-column-layout">
+          
+          <!-- LEFT SIDE: Large Aesthetic Diary / Journal with Slightly Open Cover -->
+          <div class="diary-left-column">
+            <div class="diary-book-wrapper" id="diaryInteractiveBook" title="Click to flip journal page!">
+              
+              <!-- 3D Book Container -->
+              <div class="physical-book-mockup">
+                <!-- Leather strap & bookmark ribbon -->
+                <div class="book-ribbon-bookmark"></div>
+                
+                <!-- Open Book Presentation -->
+                <div class="book-cover-exterior craft-sheet">
+                  <!-- Cute Washi Tapes on Cover -->
+                  <div class="washi-tape washi-cover-1 washi-pink-stripes"></div>
+                  <div class="washi-tape washi-cover-2 washi-mint"></div>
+                  
+                  <!-- Diary Cover Title -->
+                  <div class="cover-gold-badge">
+                    <span class="badge-star">✨</span>
+                    <h3 class="cover-main-title">SECRET DIARY</h3>
+                    <p class="cover-sub-text">Dedicated to <span class="recipient-name-inline" id="diaryCoverName">My Love</span></p>
+                    <span class="badge-star">✨</span>
+                  </div>
+
+                  <!-- Cute Stickers on Cover -->
+                  <div class="cover-stickers-cluster">
+                    <span class="c-sticker sticker-bow">🎀</span>
+                    <span class="c-sticker sticker-sparkle">⭐</span>
+                    <span class="c-sticker sticker-flower">🌸</span>
+                    <span class="c-sticker sticker-heart">💖</span>
+                    <span class="c-sticker sticker-cat">🐱</span>
+                    <span class="c-sticker sticker-ribbon">🍰</span>
+                  </div>
+
+                  <!-- Hand-drawn Doodle on Cover -->
+                  <div class="cover-hand-doodle">
+                    <span>"My favorite pages are the ones written with you" 📖💕</span>
+                  </div>
+
+                  <!-- Book Spine Rings / Spiral Binding -->
+                  <div class="spiral-binding-rings">
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Interactive Page-Turn Hint -->
+              <div class="page-turn-hint">
+                <span class="hint-icon">📖</span>
+                <span>Smooth Handcrafted Scrapbook Journal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE: Handwritten Letter on Textured Lined Paper -->
+          <div class="diary-right-column">
+            
+            <div class="journal-lined-paper craft-sheet" id="diaryPaperSheet">
+              <div class="washi-tape washi-tape-mini washi-tape-letter-tl washi-blue-stripes"></div>
+              <div class="paper-clip paper-clip-right"></div>
+              
+              <!-- Heading: Little Things I Want You To Know -->
+              <header class="journal-entry-header">
+                <div class="date-stamp-polaroid">
+                  <span class="entry-date-label">DATE: TODAY & ALWAYS</span>
+                  <span class="entry-weather">MOOD: DEEPLY IN LOVE 💖</span>
+                </div>
+                <h2 class="journal-entry-heading">Little Things I Want You To Know 💌</h2>
+              </header>
+
+              <!-- Journal Entries Sections -->
+              <div class="journal-entries-body" id="editableDiaryText">
+                
+                <!-- Section 1: The Way You Laugh -->
+                <div class="journal-entry-card">
+                  <div class="entry-bullet-sticker">🌸</div>
+                  <div class="entry-content">
+                    <h4 class="entry-section-title">The way your laugh brightens my world...</h4>
+                    <p class="entry-text">
+                      Whenever you laugh really hard and hide your face in your hands, my whole heart melts. 
+                      You have the kind of joy that fills a room and makes everything soft, gentle, and safe.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Section 2: My Favorite Memories -->
+                <div class="journal-entry-card">
+                  <div class="entry-bullet-sticker">🌟</div>
+                  <div class="entry-content">
+                    <h4 class="entry-section-title">My favorite memories of us...</h4>
+                    <p class="entry-text">
+                      The quiet moments:laughing at inside jokes that only we understand, 
+                      and walking side by side feeling like the rest of the busy world doesn’t exist.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Section 3: Birthday Wishes for You -->
+                <div class="journal-entry-card">
+                  <div class="entry-bullet-sticker">🎂</div>
+                  <div class="entry-content">
+                    <h4 class="entry-section-title">My biggest birthday wishes for you...</h4>
+                    <p class="entry-text">
+                      I wish for you to achieve every dream you hold close. I wish for your days to be filled with gentle peace, 
+                      overflowing cups of warm tea, sweet surprises, and unconditional love every second.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Section 4: A Forever Promise -->
+                <div class="journal-entry-card">
+                  <div class="entry-bullet-sticker">💖</div>
+                  <div class="entry-content">
+                    <h4 class="entry-section-title">A promise I make to you today...</h4>
+                    <p class="entry-text">
+                      No matter where life takes us or what mountains we cross, you will never have to doubt if you are loved. 
+                      I will stand by you, cheer for you louder than anyone else, and remind you every single day how precious you are.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Diary Footer & Doodles -->
+              <footer class="journal-entry-footer">
+                <div class="diary-signature-row">
+                  <span class="forever-tag">Forever & Ever,</span>
+                  <span class="sign-name">With all my love 💗📖</span>
+                </div>
+                <div class="journal-doodles-wrap">
+                  <span>🍓</span>
+                  <span>🎀</span>
+                  <span>⭐</span>
+                  <span>💕</span>
+                </div>
+              </footer>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Back to Gifts at bottom -->
+        <div class="page-bottom-nav">
+          <button class="back-to-gifts-btn-large" data-target="page-gifts">
+            <span>← Back to Choose Another Gift 🎁</span>
+          </button>
+          <button class="next-surprise-shortcut-btn hidden" id="shortcutNextSurprise3">
+            <span>Next: 4 Candle Wishes 🎂✨ →</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =================================================== -->
+    <!-- SCREEN 4: FINAL SURPRISE CAKE & 4 CANDLE WISHES 🎂  -->
+    <!-- =================================================== -->
+    <section class="scrapbook-page page-hidden" id="page-final-cake">
+      <div class="gift-page-wrapper final-cake-page-bg">
+        
+        <!-- Header with Back Button -->
+        <div class="subpage-nav-bar">
+          <button class="back-to-gifts-btn" data-target="page-gifts">
+            <span class="back-arrow">←</span>
+            <span>Back to Gifts</span>
+          </button>
+          <div class="page-title-badge">Grand Finale: 4 Candle Wishes 🎂✨</div>
+        </div>
+
+        <div class="final-cake-card-container craft-sheet">
+          <div class="washi-tape washi-tape-center washi-gingham-pink"></div>
+          
+          <!-- Cake Stage Header -->
+          <div class="final-cake-header text-center">
+            <span class="scrapbook-tag">★ THE FINAL SURPRISE ★</span>
+            <h2 class="final-cake-main-title">Blow Out 4 Candles for 4 Wishes! 🕯️✨</h2>
+            <p class="final-cake-sub-desc">
+              Tap each candle to blow it out! Every single candle reveals a secret birthday wish written just for you. 💗
+            </p>
+            
+            <div class="candle-progress-status-pill">
+              <span id="candlesBlownStatusText">Candles Blown: 0 / 4 🕯️</span>
+            </div>
+          </div>
+
+          <!-- Interactive 4-Candle Cake Area -->
+          <div class="four-candles-stage">
+            <div class="cake-glow-aurora four-cake-aurora" id="fourCakeAurora"></div>
+
+            <div class="four-candles-cake-assembly">
+              
+              <!-- The 4 Interactive Clickable Candles -->
+              <div class="four-candles-holder">
+                
+                <!-- Candle 1 -->
+                <div class="interactive-candle-unit candle-slot-1" id="finalCandleUnit1" data-index="1" role="button" tabindex="0" title="Click to blow out Candle 1!">
+                  <div class="candle-tap-hint">Tap me! 🕯️</div>
+                  <div class="candle-wick"></div>
+                  <div class="candle-flame flame-flicker flame-1" id="finalFlame1">
+                    <div class="flame-core"></div>
+                  </div>
+                  <div class="smoke-puff hidden" id="finalSmoke1">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="candle-stick candle-pink candle-medium">
+                    <span class="candle-index-badge">1</span>
+                  </div>
+                </div>
+
+                <!-- Candle 2 -->
+                <div class="interactive-candle-unit candle-slot-2" id="finalCandleUnit2" data-index="2" role="button" tabindex="0" title="Click to blow out Candle 2!">
+                  <div class="candle-tap-hint">Tap me! 🕯️</div>
+                  <div class="candle-wick"></div>
+                  <div class="candle-flame flame-flicker flame-2" id="finalFlame2">
+                    <div class="flame-core"></div>
+                  </div>
+                  <div class="smoke-puff hidden" id="finalSmoke2">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="candle-stick candle-blue candle-tall">
+                    <span class="candle-index-badge">2</span>
+                  </div>
+                </div>
+
+                <!-- Candle 3 -->
+                <div class="interactive-candle-unit candle-slot-3" id="finalCandleUnit3" data-index="3" role="button" tabindex="0" title="Click to blow out Candle 3!">
+                  <div class="candle-tap-hint">Tap me! 🕯️</div>
+                  <div class="candle-wick"></div>
+                  <div class="candle-flame flame-flicker flame-3" id="finalFlame3">
+                    <div class="flame-core"></div>
+                  </div>
+                  <div class="smoke-puff hidden" id="finalSmoke3">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="candle-stick candle-yellow candle-tall">
+                    <span class="candle-index-badge">3</span>
+                  </div>
+                </div>
+
+                <!-- Candle 4 -->
+                <div class="interactive-candle-unit candle-slot-4" id="finalCandleUnit4" data-index="4" role="button" tabindex="0" title="Click to blow out Candle 4!">
+                  <div class="candle-tap-hint">Tap me! 🕯️</div>
+                  <div class="candle-wick"></div>
+                  <div class="candle-flame flame-flicker flame-1" id="finalFlame4">
+                    <div class="flame-core"></div>
+                  </div>
+                  <div class="smoke-puff hidden" id="finalSmoke4">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="candle-stick candle-lavender candle-medium">
+                    <span class="candle-index-badge">4</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- 4-Candle Cake SVG Stand & Cake Layers -->
+              <svg viewBox="0 0 380 200" class="four-candles-cake-svg">
+                <!-- Cake Stand Platter -->
+                <ellipse cx="190" cy="180" rx="160" ry="18" fill="#ffffff" stroke="#e8a5b2" stroke-width="3"/>
+                <ellipse cx="190" cy="185" rx="145" ry="12" fill="#f8edeb" opacity="0.6"/>
+                <path d="M 160 188 L 150 198 Q 190 202 230 198 L 220 188 Z" fill="#fff" stroke="#e8a5b2" stroke-width="2.5"/>
+
+                <!-- Bottom Tier -->
+                <rect x="55" y="110" width="270" height="70" rx="14" fill="#fffaf5" stroke="#e8a5b2" stroke-width="3"/>
+                <!-- Bottom Tier Scallop Drips -->
+                <path d="M 55 125 Q 75 142 95 125 Q 115 142 135 125 Q 155 142 175 125 Q 195 142 215 125 Q 235 142 255 125 Q 275 142 295 125 Q 310 138 325 125 L 325 110 L 55 110 Z" fill="#ffb3c6"/>
+                <path d="M 55 160 Q 190 180 325 160" stroke="#fb6f92" stroke-width="3" stroke-dasharray="6 6" fill="none"/>
+                
+                <!-- Pearls along bottom -->
+                <circle cx="80" cy="170" r="3.5" fill="#ffd166"/>
+                <circle cx="120" cy="173" r="3.5" fill="#a2d2ff"/>
+                <circle cx="160" cy="175" r="3.5" fill="#fb6f92"/>
+                <circle cx="190" cy="176" r="3.5" fill="#ffd166"/>
+                <circle cx="220" cy="175" r="3.5" fill="#fb6f92"/>
+                <circle cx="260" cy="173" r="3.5" fill="#a2d2ff"/>
+                <circle cx="300" cy="170" r="3.5" fill="#ffd166"/>
+
+                <!-- Top Tier -->
+                <rect x="90" y="55" width="200" height="58" rx="12" fill="#ffffff" stroke="#e8a5b2" stroke-width="3"/>
+                <!-- Top Tier Frosting Drips -->
+                <path d="M 90 70 Q 105 86 120 70 Q 135 86 150 70 Q 165 86 180 70 Q 195 86 210 70 Q 225 86 240 70 Q 255 86 270 70 Q 280 82 290 70 L 290 55 L 90 55 Z" fill="#ffccd5"/>
+                
+                <!-- Strawberries & Cherries on top tier -->
+                <circle cx="102" cy="50" r="8" fill="#ff4d6d"/>
+                <circle cx="140" cy="50" r="7" fill="#ff758f"/>
+                <circle cx="190" cy="49" r="8" fill="#ff4d6d"/>
+                <circle cx="240" cy="50" r="7" fill="#ff758f"/>
+                <circle cx="278" cy="50" r="8" fill="#ff4d6d"/>
+
+                <!-- Sprinkles on top tier -->
+                <circle cx="115" cy="90" r="2.5" fill="#72a5cc"/>
+                <circle cx="150" cy="95" r="2.5" fill="#fb6f92"/>
+                <circle cx="190" cy="92" r="2.5" fill="#ffd166"/>
+                <circle cx="230" cy="95" r="2.5" fill="#a2d2ff"/>
+                <circle cx="265" cy="90" r="2.5" fill="#cdb4db"/>
+              </svg>
+
+            </div>
+
+            <!-- Single Action Button for mobile / quick tapping -->
+            <div class="candle-next-btn-row">
+              <button class="cute-pill-btn blow-step-btn" id="btnBlowStepCandle">
+                <span class="btn-sparkle">✨</span>
+                <span id="btnBlowStepText">Blow Out Candle 1 🕯️</span>
+                <span class="btn-sparkle">✨</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- THE 4 WISHES CARDS SECTION (Revealed 1 by 1) -->
+          <div class="four-wishes-cards-grid" id="fourWishesGrid">
+            
+            <!-- Wish 1 -->
+            <div class="wish-item-card wish-hidden" id="wishItem1">
+              <div class="washi-tape washi-card-corner washi-yellow-dots"></div>
+              <div class="wish-item-header">
+                <span class="wish-badge-tag">Wish 1 🌸</span>
+                <h4 class="wish-heading">Endless Joy & Radiant Smiles</h4>
+              </div>
+              <p class="wish-text-content">
+                “May your life always be filled with endless laughter, gentle mornings, and pure peaceful happiness. May the gorgeous smile that lights up my whole world never fade away!” 💗
+              </p>
+            </div>
+
+            <!-- Wish 2 -->
+            <div class="wish-item-card wish-hidden" id="wishItem2">
+              <div class="washi-tape washi-card-corner washi-pink-dots"></div>
+              <div class="wish-item-header">
+                <span class="wish-badge-tag">Wish 2 💖</span>
+                <h4 class="wish-heading">Infinite Love & Warmest Shelter</h4>
+              </div>
+              <p class="wish-text-content">
+                “May you always feel deeply, unconditionally, and endlessly cherished in every heartbeat. You will always have a safe, gentle, and loving home right inside my heart.” ✨
+              </p>
+            </div>
+
+            <!-- Wish 3 -->
+            <div class="wish-item-card wish-hidden" id="wishItem3">
+              <div class="washi-tape washi-card-corner washi-blue-stripes"></div>
+              <div class="wish-item-header">
+                <span class="wish-badge-tag">Wish 3 🌟</span>
+                <h4 class="wish-heading">All Your Secret Dreams Realized</h4>
+              </div>
+              <p class="wish-text-content">
+                “May every single prayer, dream, and ambition tucked away in your heart come true in the most magical ways. May boundless success and health follow you wherever you go!” 🎈
+              </p>
+            </div>
+
+            <!-- Wish 4 -->
+            <div class="wish-item-card wish-hidden" id="wishItem4">
+              <div class="washi-tape washi-card-corner washi-mint"></div>
+              <div class="wish-item-header">
+                <span class="wish-badge-tag">Wish 4 💫</span>
+                <h4 class="wish-heading">A Lifetime of Holding Your Hand</h4>
+              </div>
+              <p class="wish-text-content">
+                “My final and most precious wish is to celebrate every single one of your birthdays holding your hand, wiping your tears, and loving you deeper with every passing sunrise.” 💕
+              </p>
+            </div>
+
+          </div>
+
+          <!-- GRAND FINALE MESSAGE (Revealed after all 4 candles blown) -->
+          <div class="grand-finale-celebration-sheet hidden bounce-in" id="grandFinaleCelebrationSheet">
+            <div class="confetti-ribbon">🎉 🎂 💖 🌸 ⭐ 🎈</div>
+            
+            <h3 class="grand-finale-h3">ONCE AGAIN, HAPPY BIRTHDAY! 🎉🎂💗</h3>
+            
+            <p class="grand-finale-p">
+              To my favorite person, my greatest blessing, and the prettiest girl in the universe! <br>
+              I love you more than words, letters, or all the stars in the night sky could ever say! 🥰✨
+            </p>
+
+            <div class="mascot-duo-celebration">
+              <span class="mascot-pair-icon">🐰 💕 🐱</span>
+              <p class="mascot-pair-quote">"We love you so much, birthday girl!"</p>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- LAST SPECIAL GIFT TEASER                       -->
+            <!-- ============================================== -->
+            <div class="last-special-gift-teaser" id="lastGiftTeaser">
+              <div class="special-gift-shimmer-box" id="btnOpenVideoGift" role="button" tabindex="0" title="Click to open your last special gift!">
+                <div class="gift-box-animated-icon">
+                  <svg viewBox="0 0 100 100" width="80" height="80">
+                    <!-- Cute 3D Gift Box with bouncing ribbon -->
+                    <rect x="20" y="42" width="60" height="48" rx="6" fill="#ffccd5" stroke="#fb6f92" stroke-width="3"/>
+                    <rect x="15" y="34" width="70" height="14" rx="4" fill="#ff8fa3" stroke="#fb6f92" stroke-width="3"/>
+                    <rect x="44" y="34" width="12" height="56" fill="#ffd166"/>
+                    <rect x="20" y="60" width="60" height="10" fill="#ffd166"/>
+                    <!-- Bow -->
+                    <path d="M 50 34 C 36 20 28 30 46 34 Z" fill="#ff4d6d" stroke="#c9184a" stroke-width="2"/>
+                    <path d="M 50 34 C 64 20 72 30 54 34 Z" fill="#ff4d6d" stroke="#c9184a" stroke-width="2"/>
+                    <circle cx="50" cy="34" r="5" fill="#ffe5ec"/>
+                  </svg>
+                </div>
+                <div class="gift-teaser-info">
+                  <span class="teaser-tag">★ SECRET SURPRISE ★</span>
+                  <h4 class="teaser-title">One Last Special Gift For You 🎁💖</h4>
+                  <p class="teaser-sub">Wait! There's one more secret surprise tucked away for my favorite girl... Click to open! ✨</p>
+                </div>
+                <div class="teaser-click-badge">
+                  <span>Open Gift 💝</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- SPECIAL VIDEO MEMORIES THEATER                 -->
+            <!-- ============================================== -->
+            <div class="video-memories-theater hidden bounce-in" id="videoMemoriesTheater">
+              <div class="washi-tape washi-tape-center washi-blue-stripes"></div>
+
+              <div class="theater-header-banner text-center">
+                <span class="scrapbook-tag">★ OUR MEMORIES THEATER 🎬 ★</span>
+                <h3 class="theater-main-title">A Little Movie Of My Whole World 🎥💗</h3>
+                <p class="theater-subtitle">Two special reels made with all my love, just for you ✨</p>
+              </div>
+
+              <!-- Stepper Progress Tracker -->
+              <div class="video-stepper-tracker" id="videoStepperTracker">
+                <div class="stepper-badge-pill active" id="badgeStepYou">
+                  <span class="stepper-dot">🌸</span>
+                  <span class="stepper-label">Reel 1: YOU</span>
+                </div>
+                <div class="stepper-connector-line"></div>
+                <div class="stepper-badge-pill" id="badgeStepUs">
+                  <span class="stepper-dot">💑</span>
+                  <span class="stepper-label">Reel 2: US</span>
+                </div>
+              </div>
+
+              <!-- REEL STEP 1: VIDEO 1 — YOU 🌸 -->
+              <div class="video-step-pane video-step-active" id="videoStepYouPane">
+                <div class="video-card craft-sheet video-card-you" id="videoCardYou">
+                  <div class="washi-tape washi-card-corner washi-pink-dots"></div>
+                  <div class="pin-decoration pin-rose"></div>
+
+                  <!-- Video 1 Title on top: YOU -->
+                  <div class="video-header-tag text-center">
+                    <div class="film-reel-icon">🌸 🎬 🌸</div>
+                    <h4 class="video-section-heading">you🌸</h4>
+                    <p class="video-sub-caption">The prettiest, sweetest girl to ever exist ✨</p>
+                  </div>
+
+                  <!-- Video Player Frame -->
+                  <div class="video-frame-screen" id="videoScreenYou">
+                    <video class="scrapbook-video-element has-video" id="playerVideoYou" src="WhatsApp Video 2026-10-19 at 11.28.22.mp4" 
+                    controls playsinline webkit-playsinline loop preload="metadata">
+                      Your browser does not support HTML5 video.
+                    </video>
+                  </div>
+                </div>
+
+                <!-- Next Video Option Button -->
+                <div class="video-next-btn-container text-center">
+                  <button class="cute-pill-btn video-next-action-btn" id="btnNextToUsVideo">
+                    <span>Next: A Video of US 🎬💑 →</span>
+                  </button>
+                  <p class="video-next-subtext">Watch her reel above, then click next to see our story! ✨</p>
+                </div>
+              </div>
+
+              <!-- REEL STEP 2: VIDEO 2 — US 💑 (Initially Hidden) -->
+              <div class="video-step-pane video-step-hidden" id="videoStepUsPane">
+                <div class="video-card craft-sheet video-card-us" id="videoCardUs">
+                  <div class="washi-tape washi-card-corner washi-yellow-dots"></div>
+                  <div class="pin-decoration pin-gold"></div>
+
+                  <!-- Video 2 Title on top: US -->
+                  <div class="video-header-tag text-center">
+                    <div class="film-reel-icon">💑 🎬 💖</div>
+                    <h4 class="video-section-heading">US 💑</h4>
+                    <p class="video-sub-caption">My favorite love story, today & forever 💖</p>
+                  </div>
+
+                  <!-- Video Player Frame -->
+                  <div class="video-frame-screen" id="videoScreenUs">
+                    <video class="scrapbook-video-element has-video" id="playerVideoYou" src="WhatsApp Video 2026-10-19 at 06.52.15.mp4" 
+                    controls playsinline webkit-playsinline loop preload="metadata">
+                      Your browser does not support HTML5 video.
+                    </video>
+        
+                </div>
+
+                <!-- Navigation between steps -->
+                <div class="video-step2-nav-row text-center">
+                  <button class="small-action-btn back-to-you-step-btn" id="btnBackToYouVideo">
+                    <span>← Watch "YOU" Video Again 🌸</span>
+                  </button>
+                  <button class="cute-pill-btn replay-us-btn" id="btnReplayUsVideo">
+                    <span>Replay US Video 🎬💖</span>
+                  </button>
+                </div>
+
+                <!-- Final Romantic Letter / Note after Videos -->
+                <div class="final-theater-love-ribbon text-center">
+                  <div class="ribbon-sparkles">⭐ 💖 🌸 💖 ⭐</div>
+                  <p class="closing-love-quote">
+                    “No matter how many birthdays come and go, my heart will always choose you, in this lifetime and every one after.” 💗
+                  </p>
+                  <span class="closing-love-sign">— Forever and always yours ✨</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="grand-finale-actions">
+              <button class="cute-pill-btn relight-btn" id="btnRelightWishes">
+                <span>Relight Candles & Make Wishes Again 🕯️✨</span>
+              </button>
+              <button class="back-to-gifts-btn-large" data-target="page-gifts">
+                <span>← Explore All Scrapbook Gifts Again 🎁</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =================================================== -->
+  <!-- MODAL 1: "PLEASE TRY AGAIN" (When NO is clicked)    -->
+  <!-- =================================================== -->
+  <div class="aesthetic-modal-overlay hidden" id="cryingModalOverlay">
+    <div class="modal-card craft-sheet bounce-in">
+      <div class="washi-tape washi-tape-center washi-pink-dots"></div>
+      
+      <!-- Crying Cartoon Mascot SVG -->
+      <div class="crying-mascot-box">
+        <svg viewBox="0 0 160 160" width="130" height="130">
+          <!-- Bunny Head -->
+          <circle cx="80" cy="85" r="38" fill="#ffffff" stroke="#5e493a" stroke-width="2.5"/>
+          
+          <!-- Bunny Drooping Sad Ears -->
+          <ellipse cx="46" cy="70" rx="9" ry="26" transform="rotate(-40 46 70)" fill="#fff" stroke="#5e493a" stroke-width="2.5"/>
+          <ellipse cx="46" cy="70" rx="5" ry="18" transform="rotate(-40 46 70)" fill="#ffccd5"/>
+          <ellipse cx="114" cy="70" rx="9" ry="26" transform="rotate(40 114 70)" fill="#fff" stroke="#5e493a" stroke-width="2.5"/>
+          <ellipse cx="114" cy="70" rx="5" ry="18" transform="rotate(40 114 70)" fill="#ffccd5"/>
+
+          <!-- Crying Waterfalls -->
+          <path d="M 64 88 Q 58 115 54 135" stroke="#a2d2ff" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+          <path d="M 96 88 Q 102 115 106 135" stroke="#a2d2ff" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+          <circle cx="53" cy="138" r="4" fill="#a2d2ff"/>
+          <circle cx="107" cy="138" r="4" fill="#a2d2ff"/>
+
+          <!-- Crying Squint Eyes -->
+          <path d="M 60 84 L 70 88 L 60 92" stroke="#5e493a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M 100 84 L 90 88 L 100 92" stroke="#5e493a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+          <!-- Blushing Cheeks -->
+          <ellipse cx="62" cy="98" rx="6" ry="4" fill="#ffb3c6"/>
+          <ellipse cx="98" cy="98" rx="6" ry="4" fill="#ffb3c6"/>
+
+          <!-- Sad Quivering Open Mouth -->
+          <ellipse cx="80" cy="102" rx="6" ry="8" fill="#e07a93" stroke="#5e493a" stroke-width="2"/>
+          
+          <!-- Broken Heart Floating -->
+          <text x="70" y="38" font-size="24">💔</text>
+        </svg>
+      </div>
+
+      <h3 class="modal-sad-title">Please try again 🥺💔</h3>
+      <p class="modal-sad-desc">
+        "Did your finger slip?? My poor heart just shattered into tiny confetti pieces... <br>
+        You didn't really mean that, right? 🥺"
+      </p>
+
+      <div class="modal-btn-row">
+        <button class="cute-pill-btn retry-btn" id="btnRetryLove">
+          <span>Let me try again! 🥹💖</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Audio elements & Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
